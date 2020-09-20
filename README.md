@@ -1,6 +1,11 @@
 # Ecommerce
-End-to-End Shopping Website Transaction
+End-to-End Automation of Shopping website:
 
+1. Please chanage the "System.setProperty" path before executing the script.
+
+
+
+=================================
 package seleniumpackage;
 
 import org.openqa.selenium.By;
@@ -12,12 +17,10 @@ public class Seleniumclass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//System.setProperty("webdriver.http.factory", "apache");
-		
+			
+// Set the "System.setProperty" path
 
-	//System.setProperty("webdriver.chrome.driver", "C:\\Users\\prateek.krishna.INCOFORGETECH\\Documents\\Automation\\selenium\\chromedriver_win32\\chromedriver.exe");
-	System.setProperty("webdriver.chrome.driver", "C:/Users/prateek.krishna.INCOFORGETECH/Documents/Automation/selenium/chromedriver_win32/chromedriver.exe");	
+	System.setProperty("webdriver.chrome.driver", "C:/Users/prateek.krishna/Documents/Automation/selenium/chromedriver_win32/chromedriver.exe");	
 		
 	//Create driver object for chrome browser
 		//Class name = ChromeDriver
@@ -30,26 +33,28 @@ public class Seleniumclass {
 		 
 		 driver.manage().window().maximize();
 		 
+		 //"Login" Page Code
+		 
 		 driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		 driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		 driver.findElement(By.id("login-button")).click();
-		 	driver.findElement(By.partialLinkText("Sauce Labs Bike Light")).click();
-		 	
-//driver.findElements(By.xpath("//*[@class='btn_primary btn_inventory']"));
-
-//driver.findElement(By.xpath("*[contains(@button,'btn_primary btn_inventory')]")).click();;
-		 	
-		 	
+		 
+		 //"Product" page code
+		 
+		 driver.findElement(By.partialLinkText("Sauce Labs Bike Light")).click();
+		 
+		 //"Add to Cart" page code
+		 
 		 driver.findElement(By.xpath("//button[@class='btn_primary btn_inventory']")).click();
+		 driver.findElement(By.xpath("//span[@class='fa-layers-counter shopping_cart_badge']")).click();
+		 driver.findElement(By.linkText("CHECKOUT")).click();
 		 
+		 //Checkout: "Your Information" page code 
+		 driver.findElement(By.id("first-name")).sendKeys("Prateek");
+		 driver.findElement(By.id("last-name")).sendKeys("Krishna");
+		 driver.findElement(By.id("postal-code")).sendKeys("110091");
 		 
-	
-		 	driver.findElement(By.xpath("//span[@class='fa-layers-counter shopping_cart_badge']")).click();
-		 	driver.findElement(By.linkText("CHECKOUT")).click();
-		 	
-		 	driver.findElement(By.id("first-name")).sendKeys("Prateek");
-		 	driver.findElement(By.id("last-name")).sendKeys("Krishna");
-		 	driver.findElement(By.id("postal-code")).sendKeys("110091");
+		 //Checkout: "Overview" page code
 		 	
 		 	driver.findElement(By.xpath("//input[@class=\"btn_primary cart_button\"]")).click();
 		 	
