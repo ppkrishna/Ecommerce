@@ -58,18 +58,11 @@ public class Seleniumclass {
 		 driver.findElement(By.id("postal-code")).sendKeys("110091");
 		 
 		 //Checkout: "Overview" page code
-		 	
 		 	driver.findElement(By.xpath("//input[@class=\"btn_primary cart_button\"]")).click();
-		 	
 		 	driver.findElement(By.linkText("FINISH")).click();
-		 	
 		 	driver.close();
 		 	
-		 	
-		 //Get the title and print it
+			//Get the title and print it
 		 System.out.println(driver.getTitle());
-		 
-
-	}
-
+		 }
 }
