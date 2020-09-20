@@ -1,7 +1,7 @@
 # Ecommerce
 End-to-End Automation of Shopping website:
 
-1. Please chanage the "System.setProperty" path before executing the script.
+1. Please change the "System.setProperty" path before executing the script.
 
 
 
